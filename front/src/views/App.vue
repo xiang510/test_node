@@ -1,17 +1,6 @@
 <template>
   <div id="app" class="container">
-    <el-row>
-      <el-col :span="24">
-        <div class="grid-content bg-purple-dark nav">
-          <div class="small-tit f-l">Never forget why your start.</div>
-          <ul>
-            <li>注册</li>
-            <li>登陆</li>
-            <li>首页</li>
-          </ul>
-        </div>
-      </el-col>
-    </el-row>
+    <v-header></v-header>
     <el-row>
       <el-col :span="12" :offset="6">
         <div class="grid-content main-content">
@@ -24,6 +13,8 @@
 </template>
 
 <script>
+
+
 export default {
   name: 'app',
   data () {
@@ -35,31 +26,7 @@ export default {
 </script>
 
 <style scope>
-.container {
-  background: url('./assets/img/bg.jpg') center no-repeat;
-  height:100%;
-}
-.small-tit {
-  line-height:60px;
-  font-size:14px;
-  text-indent:30px;
-}
-.nav {
-  height: 60px;
-  background-color:rgba(0,0,0,.4);
-  color:#fff;
-}
-.nav li {
-  float:right;
-  width:80px;
-  line-height:60px;
-  text-align:center;
-}
-.nav li:hover {
-  background-color:#0297b7;
-  cursor:pointer;
-  
-}
+
 .main-content {
   
   border-radius:20px;

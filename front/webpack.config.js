@@ -3,6 +3,7 @@ var webpack = require('webpack')
 
 module.exports = {
   entry: './src/main.js',
+  
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
@@ -65,7 +66,8 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     noInfo: true,
-    overlay: true
+    overlay: true,
+    port:3000
   },
   performance: {
     hints: false

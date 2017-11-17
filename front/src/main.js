@@ -1,12 +1,24 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import App from './App.vue'
+import components from './components'
+import router  from './routers'
+import http from 'vue-resource'
 
 
+Vue.use(http)
 Vue.use(ElementUI)
 
+
+Object.keys(components).forEach((key)=>{
+  var name = key.replace(/(\w)/,(v) => v.toUpperCase()); //首字母大写
+
+  Vue.component(`v${name}`, components[key])
+});
+
 new Vue({
-  el: '#app',
-  render: h => h(App)
-})
+  router
+}).$mount('#app')
+
+
+

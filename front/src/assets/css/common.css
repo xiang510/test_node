@@ -19,3 +19,36 @@ ul,ol {
     font-size:0;
     width:0;
 }
+#app {
+    height:100%;
+}
+.container {
+    background: url('/src/assets/img/bg.jpg') center no-repeat;
+
+    height:100%;
+  }
+  .small-tit {
+    line-height:60px;
+    font-size:14px;
+    text-indent:30px;
+  }
+  .nav {
+    height: 60px;
+    background-color:rgba(0,0,0,.4);
+    color:#fff;
+  }
+  .nav li {
+    float:right;
+    width:80px;
+    line-height:60px;
+    text-align:center;
+  }
+  .nav li a {
+      color:#fff;
+      text-decoration:none;
+  }
+  .nav li:hover {
+    background-color:#0297b7;
+    cursor:pointer;
+    
+  }
