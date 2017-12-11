@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import './assets/css/common.css'
 import components from './components'
 import router  from './routers'
 import http from 'vue-resource'

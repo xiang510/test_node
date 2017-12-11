@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container">
+  <div class="container">
     <v-header></v-header>
     <el-row>
       <el-col :span="12" :offset="6">

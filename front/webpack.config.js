@@ -67,7 +67,16 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true,
     overlay: true,
-    port:3000
+    proxy: {
+      '/api': {
+        target: 'http://172.16.3.27',
+        changeOrigin: true,
+        // pathRewrite: {
+        //   '^/api': '/api'
+        // }
+      }
+    }
+    // port:3000
   },
   performance: {
     hints: false

@@ -4,21 +4,22 @@ var router = express.Router();
 var login = require('../controller').login;
 var register = require('../controller').register;
 
-var saveMsg = require('../models/user').saveMsg;
 
 /* USER. */
-router.get('/api/login', function(req, res, next) {
-
-  var data = {
-    username:'xiangc',
-    password:123456,
-    date:'2017-11-17 15:11:00'
-  }
-  saveMsg(data);
+router.post('/api/login', function(req, res, next) {
   res.json({
     'state':'OK',
     'msg':'登陆成功'
   })
 });
 
+router.post('/api/register',register,function(req,res,next){
+
+  res.json({
+    'state':'OK',
+    'msg':'注册成功'
+  })
+  
+});
 module.exports = router;
+

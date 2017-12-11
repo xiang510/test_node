@@ -32,7 +32,19 @@ export default {
     },
     methods:{
         register (){
-            console.log(this.$http);
+            if(this.name && this.passnum1 && this.passnum2 && (this.passnum1 === this.passnum2)){
+                var obj = {
+                    'username':this.name,
+                    'password':this.passnum1
+                }
+                this.$http.post('/api/register',obj).then((res)=>{
+                    console.log(res);
+                },(err)=>{
+                    console.log(err);
+                })
+            }else {
+                alert('请输入正确注册的信息');
+            }
         }
     }
 }

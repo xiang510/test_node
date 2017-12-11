@@ -23,7 +23,7 @@ ul,ol {
     height:100%;
 }
 .container {
-    background: url('/src/assets/img/bg.jpg') center no-repeat;
+    background: url('../img/bg.jpg') center no-repeat;
 
     height:100%;
   }
