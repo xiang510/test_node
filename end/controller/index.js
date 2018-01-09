@@ -1,45 +1,24 @@
+const db = require('../models');
+const initData = {content: [], users: []};
 
-var saveMsg = require('../models/user').saveMsg;
-var checkInfo = require('../models/user').checkInfo;
+db.init(initData);
 
-var login = function login(req, res, next) {
-    //params  name string
-    //params  password number
-
-    if (req.params.length === 2) {
-        console.log(req.params);
-        next();
-    } else {
-
+const checkUser = function(req, res, next) {
+    console.log(req.body.params);
+    var userInfo = {name:req.body.params};
+    if (!db.get('user',userInfo)) {
         res.json({
-            'state': 0,
-            'errormsg': '用户名和密码输入不正确'
-        })
+            status:0,
+            errMsg:'该用户不存在'
+        });
+        return;
     }
-};
+    next();
+}
+const login = function (req, res, next) {
 
-var register = function register(req, res, next) {
-    if (req.body.username && req.body.password) {
-        var nowdate = Date.now();
-        var regInfo = {
-            username:req.body.username,
-            userpass:req.body.password,
-            date:nowdate
-        }
-        //检查数据是否存在
-        checkInfo(regInfo,req,res,next);
-        
-
-    } else {
-        res.json({
-            'state':0,
-            'msg':'注册信息不正确'
-        })
-    }
-
-};
-
-module.exports = {
-    login,
-    register
+}
+module.exports =  {
+    checkUser,
+    login
 }

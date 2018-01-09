@@ -6,7 +6,7 @@ module.exports = {
   
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: process.env.NODE_ENV === 'production' ? '/public/' : '/dist/',
     filename: 'build.js'
   },
   module: {
@@ -69,23 +69,18 @@ module.exports = {
     overlay: true,
     proxy: {
       '/api': {
-        target: 'http://172.16.3.27',
-        changeOrigin: true,
-        // pathRewrite: {
-        //   '^/api': '/api'
-        // }
+        target: 'http://localhost:3000'
       }
     }
-    // port:3000
   },
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#cheap-module-eval-source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
+  module.exports.devtool = '#cheap-module-source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({

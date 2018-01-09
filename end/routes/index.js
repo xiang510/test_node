@@ -1,19 +1,16 @@
 var express = require('express');
 var router = express.Router();
-
-var login = require('../controller').login;
-var register = require('../controller').register;
-
+var mycontrol = require('../controller');
 
 /* USER. */
-router.post('/api/login', function(req, res, next) {
+router.post('/api/login', mycontrol.checkUser, function(req, res, next) {
   res.json({
     'state':'OK',
     'msg':'登陆成功'
   })
 });
 
-router.post('/api/register',register,function(req,res,next){
+router.post('/api/register',function(req,res,next){
 
   res.json({
     'state':'OK',

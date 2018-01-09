@@ -19,12 +19,14 @@ ul,ol {
     font-size:0;
     width:0;
 }
+.opct {
+    display:none;
+}
 #app {
     height:100%;
 }
 .container {
-    background: url('../img/bg.jpg') center no-repeat;
-
+    /* background: url('../img/bg.jpg') center no-repeat; */
     height:100%;
   }
   .small-tit {
@@ -34,7 +36,7 @@ ul,ol {
   }
   .nav {
     height: 60px;
-    background-color:rgba(0,0,0,.4);
+    background-color:rgba(0,0,0,.8);
     color:#fff;
   }
   .nav li {
@@ -46,6 +48,7 @@ ul,ol {
   .nav li a {
       color:#fff;
       text-decoration:none;
+      display:block;
   }
   .nav li:hover {
     background-color:#0297b7;
